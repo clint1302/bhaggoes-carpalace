@@ -1,0 +1,48 @@
+####CUSTOM_HEADER####
+#NL: Place your custom rules here
+#EN: Plaats uw eigen regels hier
+Options +FollowSymLinks
+RewriteEngine On
+AddDefaultCharset UTF-8
+## splits extra vars uit door | (pipe) tekens
+RewriteRule ^dash(/*)$ index.php?inc=dash.front.php
+RewriteRule ^content(/*)$ index.php?inc=content.front.php
+RewriteRule ^gallery(/*)$ index.php?inc=gallery.front.php
+RewriteRule ^gallery/add-gallery-image(/*)$ index.php?inc=gallery.addimage.php&pid=$1
+RewriteRule ^gallery/edit-gallery-image/([0-9]+)(/*)$ index.php?inc=gallery.editimage.php&pid=$1
+RewriteRule ^cars(/*)$ index.php?inc=cars.front.php
+RewriteRule ^cars/add-car(/*)$ index.php?inc=cars.addcar.php&pid=$1
+RewriteRule ^cars/add-car-model(/*)$ index.php?inc=cars.addmodel.php&pid=$1
+RewriteRule ^cars/edit-car/([0-9]+)(/*)$ index.php?inc=cars.editcar.php&pid=$1
+
+RewriteRule ^imggen(/*)$ index.php?inc=imggen.front.php
+RewriteRule ^project/([0-9]+)/edit(/*)$ index.php?inc=projects.editproject.php&pid=$1
+
+RewriteRule ^login(/*)$ login.php
+
+## 301's
+##flash upload enabling on nxs
+<IfModule mod_security.c>
+	<Files network_fotoupload.php>
+		SecFilterScanPOST Off
+	</Files>
+</IfModule>
+<IfModule mod_security.c>
+	<Files registratie_upload.php>
+		SecFilterScanPOST Off
+	</Files>
+</IfModule>
+## alle open dirs dicht
+##Options All -Indexes
+RewriteRule ^404.html$ index.php?inc=pagina.404.php
+DirectoryIndex login.php
+## redirect als bestanden niet gevonden worden of toegankelijk zijn
+##ErrorDocument 400 http://localhost/
+##ErrorDocument 401 /index.php
+##ErrorDocument 403 http://localhost/
+##ErrorDocument 404 http://localhost/bhaggoes/404/
+##ErrorDocument 500 http://localhost/
+####CUSTOM_TAILER####
+
+####ERROR_HEADER####
+####ERROR_TAILER####

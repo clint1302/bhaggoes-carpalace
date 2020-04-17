@@ -1,0 +1,341 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+* {
+	outline: none;
+	-webkit-box-sizing: border-box;   /* Safari 3-4, also probably droppable */
+	-moz-box-sizing: border-box;   /* Firefox 1, probably can drop this */
+    box-sizing:	border-box;
+	-webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+	
+	-webkit-appearance: none;
+	text-decoration:none;
+	color:inherit;
+}
+h1{
+	padding-top:10px;
+margin:15px 20px 0px 20px;	
+}
+@font-face {
+  font-family: 'MuseoSans';
+  font-weight: normal;
+	src: url('../fonts/museosans.ttf');
+}
+@font-face {
+  font-family: 'OpenSans';
+  font-weight: normal;
+	src: url('../fonts/opensansreg.ttf');
+}
+
+
+@font-face {
+  font-family: 'OpenSans';
+  font-weight: bold;
+	src: url('../fonts/opensansbold.ttf');
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-weight: 100;
+	src: url('../fonts/opensanslight.ttf');
+}
+
+.clear {
+	width: 100%;
+	height: 0px;
+	clear: both;
+}
+input[type=text],input[type=password],textarea{
+width:100%;
+display:block;	
+
+border:solid 1px #d9d4d4;
+padding:10px;	
+color:#444449;
+}
+input:focus,textarea:focus{
+outline:none !important;
+border-color:#1695a3;	
+}
+
+html,body{
+padding:0;
+margin:0;	
+height:100%;
+width:100%;
+}
+body{
+background:#0088cc;	
+color:#fff;
+font-family: 'MuseoSans','OpenSans',"Lucida Grande", sans-serif;
+font-size:13px;
+-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+position:relative;
+}
+.main-top-view{
+display:block;
+width:100%;
+height:600px;	
+position:relative;
+
+background-image:url(../img/background/hexa.png);
+background-position:center;
+background-size:cover;
+background-repeat:no-repeat;
+}
+.main-top-cont{
+display:block;
+width:1000px;
+height:600px;
+margin:0 auto;
+position:relative;
+padding-top:50px;
+}
+
+.main-top-console-cont{
+display:block;
+width:550px;
+height:400px;
+position:absolute;
+top:130px;
+left:50px;
+
+background:rgba(0,46,68,.5);
+overflow-y:scroll;
+border-radius:5px;
+
+box-shadow:0px 5px 5px rgba(0,0,0,.05);
+font-family: "Monaco","Courier New",monospace;
+font-size:13px;
+
+border:solid 3px rgba(255,255,255,.1);
+}
+.main-top-right{
+display:block;
+width:300px;
+height:400px;
+position:absolute;
+top:130px;
+right:50px;
+overflow-y:scroll;
+}
+.main-top-right-head{
+display:block;
+font-size:26px;	
+text-shadow:0px 2px 2px rgba(0,0,0,.1);
+margin-bottom:10px;
+}
+.main-top-right-body{
+display:block;
+font-size:14px;	
+text-shadow:0px 2px 2px rgba(0,0,0,.1);
+margin-bottom:10px;
+}
+
+.main-top-console{
+padding:10px;
+min-height:100%;
+background:rgba(0,46,68,.9);
+}
+.main-top-console .main-console-real span{
+background:rgba(255,255,255,.1);
+padding:10px;
+display:block;	
+border-radius:5px;
+margin:10px 0;
+}
+.main-top-console input[type=text]{
+display:block;
+padding:10px;
+
+background:rgba(0,0,0,.1);	
+border:0;
+color:#FFF;
+
+position:absolute;
+left:20px;
+top:0;
+width:calc(100% - 20px);
+}
+.main-top-console .console-input{
+display:block;	
+position:relative;
+height:33px;
+line-height:33px;
+padding-left:5px;
+font-weight:bold;
+margin-top:10px;
+}
+.main-syntax{
+display:block;	
+font-weight:bold;	
+padding:5px 10px;	
+color:#ccc;
+}
+.main-equation{
+display:block;
+padding:5px 10px;	
+}
+.main-bottom-view{
+display:block;
+width:100%;
+min-height:200px;	
+position:relative;
+background:#2b3336;
+}
+.main-error{
+background:#611919 !important;	
+}
+.main-warn{
+}
+.main-nav-top{
+position:fixed;
+display:block;
+width:calc(100% - 40px);
+margin:20px;
+background:#2b2e30;	
+z-index:100;
+}
+.main-nav-top a{
+display:inline-block;
+padding:20px 40px;	
+text-transform:uppercase;
+	overflow: visible;
+}
+/* animation domination */
+.main-menu-item {
+	perspective: 200px;
+	transition: all .07s linear;
+	position: relative;
+	cursor: pointer;
+}
+	/* complete the animation! */
+	.main-menu-item:hover .main-menu-item-box, 
+	.main-menu-item:focus .main-menu-item-box {
+		-webkit-transform: translateZ(-25px) rotateX(90deg);
+	}
+	
+	/* complete the animation! */
+	.main-menu-item:active .main-menu-item-box {
+		-webkit-transform: translateZ(-25px) rotateX(70deg);
+	}
+.main-menu-item-box {
+	transition: all .3s ease-out;
+	-o-transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+	-webkit-transition: all .3s ease-out;
+	
+	transform: translatez(-25px);
+	transform-style: preserve-3d;
+	-o-transform: translatez(-25px);
+	-o-transform-style: preserve-3d;
+	-moz-transform: translatez(-25px);
+	-moz-transform-style: preserve-3d;
+	-webkit-transform: translatez(-25px);
+	-webkit-transform-style: preserve-3d;
+	
+	-webkit-pointer-events: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;}
+
+/* 
+	put the "front" and "back" elements into place with CSS transforms, 
+	specifically translation and translatez
+*/
+.front {
+	transform: rotatex(0deg) translatez(25px);
+	-o-transform: rotatex(0deg) translatez(25px);
+	-moz-transform: rotatex(0deg) translatez(25px);
+	-webkit-transform: rotatex(0deg) translatez(25px);
+	background:#2b2e30;
+
+}
+
+.back {
+	transform: rotatex(-90deg) translatez(25px);
+	-o-transform: rotatex(-90deg) translatez(25px);
+	-moz-transform: rotatex(-90deg) translatez(25px);
+	-webkit-transform: rotatex(-90deg) translatez(25px);
+	background:#006293;
+	color: #ffe7c4;
+	font-weight:bold;
+}
+
+.front, .back {
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding:20px 40px;	
+	color: white;
+	pointer-events: none;
+	box-sizing: border-box;
+}
+
+.main-logo-title{
+	font-weight:bold;
+}
+.main-logo-title .front{
+background:#004568;	
+}
+.main-logo-title .back{
+background:#002e45;	
+}
+.fixed-width{
+display:block;
+width:1000px;
+margin:0 auto;	
+}
+.main-bottom-view section{
+display:inline-block;
+width:calc(33% - 5px);	
+padding:10px;
+}
+.main-bottom-view section div{
+display:block;
+text-align:center;	
+padding:10px;
+}
+.main-bottom-view .section-title{
+font-weight:bold;
+font-size:18px;
+}
+
+#section-info{
+padding:40px 0px;	
+}
+#calender{
+position:relative;	
+}
+#calender .cal-day{
+position:absolute;
+left:0;
+top:28px;
+display:block;
+width:100%;
+padding:5px;
+text-align:center;	
+font-weight:bold;
+text-transform:uppercase;
+}
+#calender .cal-num{
+position:absolute;
+left:0;
+top:62px;
+display:block;
+width:100%;
+padding:5px;
+text-align:center;	
+font-weight:bold;
+text-transform:uppercase;
+font-size:60px;
+color:#454545;
+}
